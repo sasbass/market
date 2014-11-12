@@ -20,6 +20,9 @@ How to install this system
 4. Change this settings with your:
 
     $db['default']['hostname'] = 'localhost'; 
+    
     $db['default']['username'] = 'root'; // Put your username for database.
+    
     $db['default']['password'] = ''; // Put yuor password for database.
+    
     $db['default']['database'] = 'market'; // This is database table name.
