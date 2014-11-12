@@ -1,0 +1,6 @@
+@CHARSET "UTF-8";
+@IMPORT url("reset.css");
+@IMPORT url("text.css");
+@IMPORT url("960.css");
+@IMPORT url("../js/jquery-ui-1.10.3/themes/base/jquery-ui.css");
+@IMPORT url("common.css");

@@ -1,0 +1,302 @@
+th, td {
+	vertical-align: middle;
+}
+.grid_3.input-info {
+	position: relative;
+	width: 278px;
+}
+.grid_3.input-info input.in {
+	font-size: 16pt;
+	width: 95%;
+}
+.grid_3.input-info input.bt {
+	margin: 0 0 0 35px;
+	padding: 15px;
+}
+.grid_5.cashier-info {
+	color: #444;
+	float: right;
+	font-size: 16pt;
+	padding: 10px;
+	text-align:right;	
+	height: 235px;
+}
+a {
+	color: #000;
+	text-decoration: none;
+}
+a:HOVER {
+	color: #999;
+	text-decoration: none;
+}
+.calc {
+	width: 100%;
+	font-size: 20pt;
+}
+    table.calc, table.calc tr:nth-child(2n+1), table.calc tr:nth-child(2n) {
+        background: none;
+    }
+	.calc a {
+		width: 60px;
+		height: 46px;
+		font-family: Arial, sans-serif;
+		text-align: center;
+		display: block;
+		padding: 10px 5px 5px 5px;
+		margin: 1px;
+		color: #555;
+		border-radius: 5px;
+		background: #888 url("../interface/bt_bg.jpg") no-repeat;
+	}
+    
+    .calc a#num-8 img {
+        margin-left: -3px;
+        margin-top: -9px;
+        height: 24px;
+    }
+	
+	.calc a:HOVER, .calc a.number-tabs {
+		box-shadow: inset 0 0 5px #7b7777;
+		background: #e0e0e0;
+	}
+	.list-table {
+		width: 100%;
+		background: #sss;
+		font-size: 14pt;
+        border: 1px solid #ccc;
+        box-shadow: 0 0 1px #444;
+	}
+	.list-table thead tr {background: #333333; color: #ffffff;}
+	.list-table thead tr td, .list-table tbody tr td {padding: 5px;}
+	
+	.list-table tbody tr:nth-child(even) {background: #F7F5A0}
+	.list-table tbody tr:nth-child(odd) {background: #FCFCED}
+	.list-table tbody tr {
+		border-bottom: 1px dotted #444444;
+	}	
+	
+	div#table-pay {
+		background: none repeat scroll 0 0 #fff;
+        border: 1px solid #555;
+        border-radius: 5px;
+        box-shadow: 0 0 2px #333 inset;
+        height: 300px;
+        overflow: hidden;
+	}
+	.overflow-x {
+		overflow: auto;
+		height: 290px;	
+	}
+	input.in {
+		padding: 5px;
+		border-radius: 5px;
+		border: 1px solid #888;
+		box-shadow: inset 0 0 2px #000;
+		font-size: 12pt;
+		width: 70%;
+	}
+	input.big-box {
+		padding: 4px;
+		font-size: 16pt;
+		width: 80px;
+		height: 30px;
+		border: 1px solid #ccc;
+        border-radius: 4px;
+        color: #555;
+	}
+	input.bt, button {
+		padding: 5px;
+		background: #333;
+		color: #fff;
+		cursor: pointer;
+		border: 1px solid #000;
+		font-size: 14pt;
+		border-radius: 4px;
+	}
+	input.bt:HOVER, button:HOVER {
+		background: #555; 
+	}
+	
+input.bt.tab, input.tab {
+	color: #fff;
+	background: #06820E;
+	border: 1px solid #888;
+	box-shadow: inset 0 0 2px #000;
+}
+.bt.pay {
+	padding: 15px;
+}
+
+/* BEGIN * LOGIN */
+#login {
+	position: relative;
+    float: none;
+    display: block;
+	margin: 0;
+	margin: auto;
+    margin-top: 200px;
+	padding: 15px;
+	background: url('../interface/form_bg.png') no-repeat center;
+	border-radius: 5px;
+}
+#login h1, label {
+	margin: 0px;
+	text-align: center;
+	color: #05777F;
+}
+#login input.in {
+	padding: 1px;
+	padding-left: 43pt;
+	font-size: 14pt;
+	width: 78%;
+    height: 41px;
+	color: #133B5E;
+    border-color: #4d4d4d;
+    box-shadow: none;
+}
+input#login-button {
+    position: absolute;
+    bottom: -120px;
+    left: 100px;
+    z-index: 20;
+}
+#login .username {
+	background: #fff url("../interface/user.jpg") no-repeat;
+	background-position: 2px 2px;
+}
+#login .password {
+	background: #fff url("../interface/key.jpg") no-repeat;
+	background-position: 2px 2px;
+}
+#login input.bt {
+	margin: 4px 0 0 3px;
+	padding: 5px;
+	font-size: 14pt;
+	background: #333;
+	color: #fff;
+	cursor: pointer;
+	border: none;
+}
+/* END * LOGIN */
+
+/* BEGIN * MESSAGES */
+#message {
+	position: absolute;
+	bottom: -90px;
+	left: 0px;
+	width: 310px;
+	opacity: 0;
+	z-index: 260;
+}
+
+#message h4,#message h3,#message h2,#message h1 {
+	font-weight: bold;
+	color: #fff;
+	padding: 0px;
+	margin: 0px;
+}
+#message p {
+	padding: 0px;
+	margin: 0px;
+}
+
+.error_message,.success_message {
+	background: #8d0000;
+	color: #fff;
+	border: 1px solid #ff0000;
+	padding: 5px;
+	margin: 5px 0;
+	text-align: center;
+	font-size: 9pt;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+}
+
+.success_message {
+	background: #78981a;
+	border-color: #bdc014;
+}
+/* END * MESSAGES */
+
+body .container_12 {
+    height: 700px;
+    margin-top: 20px;
+    padding: 10px 2px 2px 2px;
+    border: 1px solid #ccc;
+    box-shadow: inset 0 0 2px #333;
+    background: url('../interface/bg.jpg') repeat-x;
+}
+
+
+
+/* BEGIN * Responsive Design */
+    /* Tablet Screen Sizes */
+    @media only screen and (min-width: 768px) and (max-width: 959px) {
+
+    /* Resize the body */
+    body {min-width:767px;}
+
+    /* Resize the row */
+    .row {width:767px;}
+
+    /* Resize the columns */
+    .col_12 {width:748px;}
+    .col_9 {width:492px;}
+    .col_8 {width:556px;}
+    .col_6 {width:364px;}
+    .col_4 {width:172px;}
+    .col_3 {width:236px;}
+
+    }
+    
+    /* Mobile Landscape Screen Sizes */
+    @media only screen and (min-width: 480px) and (max-width: 767px) {
+
+    /* Resize the body */
+    body {min-width:479px;}
+
+    /* Resize the row */
+    .row {width:479px;}
+
+    /* Resize the columns */
+    .col_12 {width:460px;}
+    .col_9 {width:225px;}
+    .col_8 {width:225px;}
+    .col_6 {width:225px;}
+    .col_4 {width:225px; margin-left:0px;}
+    .col_3 {width:225px; margin-left:0px;}
+
+    /* Fix the .last issue */
+    .last {
+    margin-left:0;
+    margin-right:10px;
+    }
+
+    }
+    
+    /* Mobile Portrait Screen Sizes */
+    @media only screen and (max-width: 479px) {
+
+    /* Resize the body */
+    body {min-width:320px;}
+
+    /* Resize the row */
+    .row {width:320px;}
+
+    /* Resize the columns */
+    .col_12 {width:300px;}
+    .col_9 {width:300px;}
+    .col_8 {width:300px;}
+    .col_6 {width:300px;}
+    .col_4 {width:300px; margin-left:0px;}
+    .col_3 {width:300px; margin-left:0px;}
+
+    /* Fix the .last issue */
+    .last {
+    margin-left:0;
+    margin-right:10px;
+    }
+    }
+    
+/* END * Responsive Design */
