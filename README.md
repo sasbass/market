@@ -18,7 +18,7 @@ How to install this system
 2. Import your database from "/db" folder at project.
 3. Open config file from: application/config/database.php
 4. Change this settings with your:
-======
+===
     $db['default']['hostname'] = 'localhost'; 
     $db['default']['username'] = 'root'; // Put your username for database.
     $db['default']['password'] = ''; // Put yuor password for database.
