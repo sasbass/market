@@ -23,6 +23,6 @@ How to install this system
     
     $db['default']['username'] = 'root'; // Put your username for database.
     
-    $db['default']['password'] = ' '; // Put yuor password for database.
+    $db['default']['password'] = 'new password here'; // Put yuor password for database.
     
     $db['default']['database'] = 'market'; // This is database table name.
