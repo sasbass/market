@@ -12,7 +12,7 @@ This is demo working version: http://market.targovishte.com/ and http://market.t
 You manage this your products from here, if yours address for project is http://localhost/ and store is this http://localhost/store/
 Your cashier is here: http://localhost/
 
-How to install this system
+How to install this system \n
 1. Download code on your computer.
 2. Import your database from "/db" folder at project.
 3. Open config file from: application/config/database.php
