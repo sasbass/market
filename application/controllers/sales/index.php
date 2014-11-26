@@ -4,6 +4,11 @@ class Index extends MY_Controller {
 	
 	public function __construct(){
 		parent::__construct();
+
+		// Load language file sales_lang.php
+		$this->lang->load('sales');
+        $this->data['lang'] = $this->lang->language;
+
 		$this->data["isLogin"] = $this->isLogin();
 		if($this->isLogin()){
 			$this->data["menu"] = $this->common_model->getMenu();
@@ -36,16 +41,13 @@ class Index extends MY_Controller {
 		if(isset($post["id"]) && !empty($post["id"][0])) {
 			if(isset($post["payment"]) && $post["payment"]>0 && $post["payment"] > $post["total"]) {
 				$this->data["products"] = $this->index_model->getProductPay(
-                        $post["id"], $this->session->userdata("user_data")
-                    );
+                    $post["id"], $this->session->userdata("user_data")
+                );
 			} else {
-				$this->message->type = 'error';
-				$this->message->title = 'Грешка!';
-				$this->message->body = '"'
-                        . '<strong>ПЛАТЕНО</strong> не може да бъде по-малко от'
-                        . '"<strong>СТОЙНОСТ</strong>".<br/>Корегирайте '
-                        . '"<strong>ПЛАТЕНО</strong>" за да бъде положителен баланса ви.';
-				$this->data["message"] = $this->message;
+				$this->message->type 	= 'error';
+				$this->message->title 	= $this->data['lang']['error'];
+				$this->message->body 	= $this->data['lang']['error_message_pay'];
+				$this->data["message"] 	= $this->message;
 			}
 		}
 		$this->index();
@@ -56,10 +58,10 @@ class Index extends MY_Controller {
 		$result = $this->index_model->add($this->input->post());
         
         if($result === false){
-            $this->message->type = 'error';
-				$this->message->title = 'Грешка!';
-				$this->message->body = 'Няма налично такова количество!';
-            $this->data["message"] = $this->message;
+            $this->message->type 	= 'error';
+			$this->message->title 	= $this->data['lang']['error'];
+			$this->message->body 	= $this->data['lang']['error_nqa'];
+            $this->data["message"] 	= $this->message;
             
             $cashier = $this->session->userdata["user_data"];
             $this->data["list"] = $this->index_model->getList($cashier->id);
@@ -86,9 +88,9 @@ class Index extends MY_Controller {
                 $this->session->set_userdata("cashier",true);
                 redirect(base_url() . "sales/");
             } else {
-                $this->message->type = 'error';
-                $this->message->title = 'Грешка!';
-                $this->message->body = 'Грешен касиер или парола, моля корегирайте данните и опитайте отново.';
+                $this->message->type 	= 'error';
+                $this->message->title 	= $this->data['lang']['error'];
+                $this->message->body 	= $this->data['lang']['error_login'];
             }
         }
         

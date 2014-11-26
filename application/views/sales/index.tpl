@@ -37,24 +37,23 @@ $(document).ready(function(){
 <div class="grid_3 input-info">
 	<form action="{$base_url}sales/index/add/" method="post">
 		<fieldset>
-		<label for="barcode">Баркод</label><br/>
+		<label for="barcode">{$lang.barcode}</label><br/>
 		<input tabindex="1" id="barcode" onclick="addWrite(this);" name="barcode" value="" type="text" class="in write"/><br/>
 	
-		<label for="quantity">Количество</label><br/>
+		<label for="quantity">{$lang.quantity}</label><br/>
 		<input tabindex="2" id="quantity" onclick="addWrite(this);" name="quantity" value="1" type="text" class="in"/><br/><br/>
 	
-		<input tabindex="3" name="add" value="ДОБАВИ АРТИКУЛ" type="submit" class="bt"/>
+		<input tabindex="3" name="add" value="{$lang.bt_add_article}" type="submit" class="bt"/>
 		</fieldset>
 	</form>
 	<div id="message">{include file="common/message.tpl"}</div>
 </div>
 
 <div class="grid_5 cashier-info">
-	Касиер: <strong>{$this->session->userdata.user_data->first_name} {$this->session->userdata.user_data->last_name}</strong><br/>
-	{*Карта номер: <strong>{$this->session->userdata.user_data->card_number}</strong><br/>*}
-    <button class="button" onclick="window.location.href='{$base_url}sales/index/clear/'">ИЗЧИСТИ</button>
+	{$lang.cashier}: <strong>{$this->session->userdata.user_data->first_name} {$this->session->userdata.user_data->last_name}</strong><br/>
+    <button class="button" onclick="window.location.href='{$base_url}sales/index/clear/'">{$lang.bt_clear}</button>
     
-	<button style="background: #d00710;" class="button" onclick="window.location.href='{$base_url}sales/index/logout/'">ИЗХОД</button>
+	<button style="background: #d00710;" class="button" onclick="window.location.href='{$base_url}sales/index/logout/'">{$lang.bt_logout}</button>
     
     
 </div>
@@ -68,12 +67,12 @@ $(document).ready(function(){
     <table cellpadding="0" cellspacing="4" border="0" class="list-table">
         <thead>
             <tr>
-                <th>Арт.&#x2116;</th>
-                <th>Баркод &#x2116;</th>
-                <th>Артикул</th>
-                <th>Кол.</th>
-                <th>Ед. цена</th>
-                <th>Стойност</th>
+                <th>{$lang.article_short}&#x2116;</th>
+                <th>{$lang.barcode} &#x2116;</th>
+                <th>{$lang.article}</th>
+                <th>{$lang.quantity_short}</th>
+                <th>{$lang.single_price}</th>
+                <th>{$lang.value}</th>
             </tr>
         </thead>
         <tbody>
@@ -86,8 +85,8 @@ $(document).ready(function(){
                 <td style="width: 29%;">{$item->barcode}</td>
                 <td style="width: 25%;">{$item->name}</td>
                 <td style="width: 11%;">{$item->quantity}</td>
-                <td>{$item->market_price} лв.</td>
-                <td>{$item->total} лв.</td>
+                <td>{$item->market_price} {$lang.unit}</td>
+                <td>{$item->total} {$lang.unit}</td>
             </tr>
             {/foreach}
         </tbody>
@@ -102,21 +101,21 @@ $(document).ready(function(){
 				<td></td>
 				<td></td>
 				<td style="width: 30%;">
-					СТРОЙНОСТ <br/>
-					<input disabled="disabled" value="{$total->total}" type="text" class="big-box"/> лв.
+					{$lang.value|upper} <br/>
+					<input disabled="disabled" value="{$total->total}" type="text" class="big-box"/> {$lang.unit}
 					<input id="total" name="total" value="{$total->total}" type="hidden"/>
 				</td>
 				<td style="width: 30%;">
-					ПЛАТЕНО <br/>
-					<input tabindex="4" onkeyup="payMent(this);" name="payment" value="" type="text" class="in big-box"/> лв.
+					{$lang.paid} <br/>
+					<input tabindex="4" onkeyup="payMent(this);" name="payment" value="" type="text" class="in big-box"/> {$lang.unit}
 				</td>
 				<td style="width: 28%;">
-					РЕСТО <br/>
-					<input disabled="disabled" id="change-span" value="" type="text" class="big-box"/> лв.
+					{$lang.change|upper} <br/>
+					<input disabled="disabled" id="change-span" value="" type="text" class="big-box"/> {$lang.unit}
 					<input id="change" name="change" value="" type="hidden"/> 
 				</td>
 				<td style="width: 30%; padding-top: 10px;">
-					<input tabindex="5" name="pay" value="ПЛАТИ" type="submit" class="bt pay"/>
+					<input tabindex="5" name="pay" value="{$lang.pay|upper}" type="submit" class="bt pay"/>
 				</td>
 			</tr>
 	</tbody>

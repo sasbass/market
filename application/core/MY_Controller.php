@@ -1,37 +1,23 @@
 <?php
 class MY_Controller extends CI_Controller {
 	
-/**
- * Служебни съобщения
- * @var Object 
- * 		$this->message->type 		= 	'[types]' 	// error OR success
- *  	$this->message->title 		= 	'[titles]' 	// Title message
- *  	$this->message->body 		= 	'[body]' 	// Body message
- *  	$this->message->redirect	= 	[redirect] 	// Integer number 2000 = 2 seconds
- *      $this->message->url			=	'[url]'		// Enter URL address.
- */
 	public $message;
 	
-/**
- * 
- * Съдържа общо ползвани данни за всички views - меню, base_url...
- * @var array
- */
 	protected $data = array();
 	
-/**
- * 
- * Конструктор на базочия контролер. Грижи се да зареди всички общо ползвани данни и да контролира правата на потребителя
- * @param boolean $forse_menu true - не отчита правата на потребителя и покзва всички достъпни страници
- */
 	public function __construct() {
 		parent::__construct();
+
 		$this->message = $this->Message();
-		$this->data["base_url"] = base_url();
+		$this->data['base_url'] = base_url();
         $this->data['var'] = $this->getSettings();
+
+        //Loading language from common_lang.php
+        $this->lang->load('common');
+        $this->data['lang'] = $this->lang->language;
 	}
 	
-	public function Message(){
+	private function Message(){
 		$this->message = new stdClass();
 		return $this->message;
 	}
@@ -111,7 +97,7 @@ class MY_Controller extends CI_Controller {
         return $this->common_model->getInvoiceNumber();
     }
 
-
+    // Generate PDF file.
     protected function createPDF(){
         $lang = 'bg';
         $this->data['invoice_date'] = date('Y-m-d_H:i:s');

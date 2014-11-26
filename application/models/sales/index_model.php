@@ -63,8 +63,7 @@ class Index_model extends MY_Model {
 				SELECT *
 				FROM `" . __TBL_USERS . "`
 				WHERE (
-						`username` = ".$this->db->escape($data["cashier"])." OR
-						`card_number` = ".$this->db->escape($data["cashier"])."
+						`username` = ".$this->db->escape($data["cashier"])."
 					)
 					AND `password` = MD5(".$this->db->escape($data["password"]).")
 			");
